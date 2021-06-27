@@ -190,10 +190,10 @@ MiATDS <- function (y, otu.tab, tree = NULL, cov = NULL, model = c("gaussian", "
 
     return(list(pd.rank = pd.rank, awSPU.pvs = pvs.awSPU, aWSPU.pvs = pvs.aWSPU, omnibus.pvs = omnibus.pvs))
   }
-  if (tree != NULL) {
+  if (class(tree) != "phylo") {
     hs <- 1
     ahc.o <- as.list(MiHC.stat(Zs = Zs, hs = hs, Ws = NULL))
-    ahc.p <- lapply(apply(sapply(Z0s, function(x) MiHC.stat(Zs = x, hs = hs, Ws = NULL)), 1, list), unlist)
+    ahc.p <- lapply(apply(matrix(sapply(Z0s, function(x) MiHC.stat(Zs = x, hs = hs, Ws = NULL)), nrow = 1, byrow = T), 1, list), unlist)
     pvs <- mapply(function(x, y) (length(which(x < y)) + 1)/(n.perm + 1), ahc.o, ahc.p)
     ind.pvs <- 1 - pchisq(Zs^2, df = 1)
     simes.pv <- min(length(ind.pvs) * ind.pvs/rank(ind.pvs))
@@ -251,13 +251,13 @@ MiATDS <- function (y, otu.tab, tree = NULL, cov = NULL, model = c("gaussian", "
       a.Ts.wSPU <- rep(NA, length(pow))
       a.Ts.wSPU <- unlist(lapply(as.list(pow), function(x) return(sum(diag(pd.weight) %*% a.U^x))))
       a.pvs.wSPU <- unlist(mapply(function(x, y) (sum(abs(x) > abs(y)) + 1)/(n.perm + 1), T0s.n.wSPU, a.Ts.wSPU))
-      T0.awSPU[l] <- min(a.pvs.awSPU)
+      T0.awSPU[l] <- min(a.pvs.wSPU)
     }
 
     p.awSPU <- (sum(T0.awSPU < T.awSPU) + 1)/(n.perm + 1)
 
-    M.MiATDS0 <- apply(cbind(T0u.minp, T0.aWSPU), 1, min)
-    M.MiATDS <- min(Tu, T.aWSPU)
+    M.MiATDS0 <- apply(cbind(T0u.minp, T0.awSPU), 1, min)
+    M.MiATDS <- min(Tu, T.awSPU)
     p.MiATDS <- (sum(M.MiATDS0 < M.MiATDS) + 1)/(n.perm + 1)
 
     pvs.awSPU <- c(pvs.wSPU, p.awSPU)
