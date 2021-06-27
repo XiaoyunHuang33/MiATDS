@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1624766066759.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3777832248",
+    "id" : "1AB8886D",
+    "lastKnownWriteTime" : 1619154802,
+    "last_content_update" : 1619154802,
+    "path" : "D:/MiATDS1/MiATDS/man/obesity_data.Rd",
+    "project_path" : "man/obesity_data.Rd",
+    "properties" : {
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_doc"
+}
