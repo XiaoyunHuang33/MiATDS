@@ -227,3 +227,18 @@ the information of processed data: ```data(autism_data)```.
 ## Statement
 
 Our code mainly refers to R packages, _MiHC_, _OMiAT_, and _MiSPU_, where _MiATDS_ function refers to _MiHC_ and _OMiAT_, the generation of OTU table (i.e., _OTUs\_simulated_ function) refers to _MiSPU_.
+
+
+## Citation
+
+If you use this code for you research, please cite our paper.
+@article{
+title={A powerful adaptive microbiome-based association test for microbial association signals with diverse sparsity levels},
+author={Han Sun, Xiaoyun Huang, Lingling Fu, Ban Huo, Tingting He, Xingpeng Jiang},
+journal={Journal of Genetics and Genomics},
+volume={48(9)},
+pages={851–859},
+year={2021},
+url={https://linkinghub.elsevier.com/retrieve/pii/S1673852721002599},
+doi = {10.1016/j.jgg.2021.08.002}
+}
