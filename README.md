@@ -232,6 +232,7 @@ Our code mainly refers to R packages, _MiHC_, _OMiAT_, and _MiSPU_, where _MiATD
 ## Citation
 
 If you use this code for you research, please cite our paper.
+```
 @article{
 title={A powerful adaptive microbiome-based association test for microbial association signals with diverse sparsity levels},
 author={Han Sun, Xiaoyun Huang, Lingling Fu, Ban Huo, Tingting He, Xingpeng Jiang},
@@ -242,3 +243,4 @@ year={2021},
 url={https://linkinghub.elsevier.com/retrieve/pii/S1673852721002599},
 doi = {10.1016/j.jgg.2021.08.002}
 }
+```
