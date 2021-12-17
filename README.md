@@ -241,6 +241,6 @@ volume={48(9)},
 pages={851–859},
 year={2021},
 url={https://linkinghub.elsevier.com/retrieve/pii/S1673852721002599},
-doi = {10.1016/j.jgg.2021.08.002}
+doi={10.1016/j.jgg.2021.08.002}
 }
 ```
